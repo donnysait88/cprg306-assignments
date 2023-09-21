@@ -1,4 +1,5 @@
 import StudentInfo from "../StudentInfo";
+import Link from "next/link";
 
 const myShop = () => {
   return (
@@ -12,6 +13,7 @@ const myShop = () => {
         </div>
 
         <StudentInfo />
+        <Link href="/">&lt;Back</Link>
       </div>
       
     </main>
