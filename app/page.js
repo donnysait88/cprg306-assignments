@@ -16,13 +16,18 @@ export default function Home() {
           <StudentInfo />
         </div>
 
-        <div className="text-sm text-red-600 font-bold flex flex-wrap">
-          <div className="w-full">
+        <div className="text-l font-bold flex flex-wrap">
+
+          <div className="border-2 bg-purple-600 hover:bg-purple-300 text-white p-2 rounded-lg mr-5">
             <Link href="./week2">Week 2</Link>
           </div>
-          <div className="w-full">
+          <div className="border-2 bg-purple-600 hover:bg-purple-300 text-white p-2 rounded-lg mr-5">
             <Link href="./week3">Week 3</Link>
           </div>
+          <div className="border-2 bg-purple-600 hover:bg-purple-300 text-white p-2 rounded-lg mr-5">
+            <Link href="./week4">Week 4</Link>
+          </div>
+
         </div>
 
       </div>
