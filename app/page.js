@@ -16,16 +16,19 @@ export default function Home() {
           <StudentInfo />
         </div>
 
-        <div className="text-l font-bold flex flex-wrap">
+        <div className="text-l font-bold flex">
 
-          <div className="border-2 bg-purple-600 hover:bg-purple-300 text-white p-2 rounded-lg mr-5">
+          <div className="border-2 bg-[#451952] hover:bg-purple-300 text-white p-2 rounded-lg mr-5">
             <Link href="./week2">Week 2</Link>
           </div>
-          <div className="border-2 bg-purple-600 hover:bg-purple-300 text-white p-2 rounded-lg mr-5">
+          <div className="border-2 bg-[#662549] hover:bg-purple-300 text-white p-2 rounded-lg mr-5">
             <Link href="./week3">Week 3</Link>
           </div>
-          <div className="border-2 bg-purple-600 hover:bg-purple-300 text-white p-2 rounded-lg mr-5">
+          <div className="border-2 bg-[#AE445A] hover:bg-purple-300 text-white p-2 rounded-lg mr-5">
             <Link href="./week4">Week 4</Link>
+          </div>
+          <div className="border-2 bg-[#F39F5A] hover:bg-purple-300 text-white p-2 rounded-lg mr-5">
+            <Link href="./week5">Week 5</Link>
           </div>
 
         </div>
@@ -35,3 +38,5 @@ export default function Home() {
     </main>
   )
 }
+
+
