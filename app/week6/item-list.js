@@ -2,19 +2,22 @@
 
 import React, { useState } from 'react';
 import Item from './item';
-import items from './items.json'
 
-const ItemList = () => {
+const ItemList = ({ items }) => {
 
   const [sortBy, setSortBy] = useState("name")
 
   const sortItems = () => {
+
+    const Item = [...items];
+    
+    
     if (sortBy === "name") {
-      return items.slice().sort((a, b) => a.name.localeCompare(b.name));
+      return Item.sort((a, b) => a.name.localeCompare(b.name));
     } else if (sortBy === "category") {
-      return items.slice().sort((a, b) => a.category.localeCompare(b.category));
+      return Item.sort((a, b) => a.category.localeCompare(b.category));
     } else if (sortBy === "title_category") {
-        const sortedByCategory = items.slice().sort((a, b) => a.category.localeCompare(b.category));
+        const sortedByCategory = Item.sort((a, b) => a.category.localeCompare(b.category));
         const groupedByCategory = [];
         let currentCategory = null;
   
@@ -29,7 +32,7 @@ const ItemList = () => {
   
         return groupedByCategory;
     }
-    return items.slice();
+    return itemsData.slice();
   }
   
   const sortedItems = sortItems();
