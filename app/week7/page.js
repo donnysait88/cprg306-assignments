@@ -41,7 +41,7 @@ const Page = () => {
               onItemSelect={handleItemSelect}
             />
           </div>
-          <div className="ml-10">
+          <div className="ml-10 flex-1">
             <MealIdeas ingredient={selectedItemName}/>
           </div>
         </div>

@@ -37,7 +37,7 @@ const MealIdeas = ({ ingredient }) => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold font-sans">More Ideas</h1>
+      <h1 className="text-2xl font-bold font-mono">More Ideas</h1>
       {isLoading ? (<p>Loading...</p>) : (
         <div>
           {ingredientSelected ? (meals.length > 0 ? (
@@ -45,9 +45,16 @@ const MealIdeas = ({ ingredient }) => {
                 <h2 className="mb-2">Here are some meal ideas using {ingredient}</h2>
                 <ul>
                   {meals.map((meal) => (
-                    <li key={meal.idMeal} className="bg-[#F39F5A] p-2 mb-3 rounded-l hover-bg-amber-200 cursor-pointer">
-                      {meal.strMeal}
-                    </li>
+                    <div className="bg-[#F39F5A] p-2 mb-3 rounded-l hover:bg-amber-200 cursor-pointer">
+                      <li key={meal.idMeal} >
+                        <div className="ml-5 text-[20px] font-serif font-bold">
+                        {meal.strMeal}
+                        <hr />
+                        </div>
+                        <img className="w-[32%] m-5 rounded-xl" src={meal.strMealThumb}/>
+
+                      </li>
+                    </div>
                   ))}
                 </ul>
               </div>
