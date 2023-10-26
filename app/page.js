@@ -36,6 +36,9 @@ export default function Home() {
           <div className="border-2 bg-[#451952] hover:bg-purple-300 text-white p-2 rounded-lg mr-5">
             <Link href="./week7">Week 7</Link>
           </div>
+          <div className="border-2 bg-[#AE445A] hover:bg-purple-300 text-white p-2 rounded-lg mr-5">
+            <Link href="./week8">Week 8</Link>
+          </div>
 
         </div>
 
