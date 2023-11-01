@@ -27,7 +27,7 @@ const Page = () => {
 
 
   return (
-    <main className="flex flex-col min-h-screen items-center p-10 font-mono">
+    <main className="flex flex-col min-h-screen items-center p-10">
         <div className="flex items-center">
             <h1 className="text-[40px] font-bold mr-10 mb-3">My Shopping List</h1>
             <Link href="/week8">&lt;Back</Link>
