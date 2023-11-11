@@ -12,7 +12,7 @@ const Page = () => {
 
   const [items, setItems] = useState([]);
   const [selectedItemName, setSelectedItemName] = useState(false);
-
+  
   const { user } = useUserAuth();
 
   const loadItems = async () => {
@@ -34,7 +34,7 @@ const Page = () => {
       const newItemId = await addItem(user.uid, newItem);
       const newItemWithId = {...newItem, id: newItemId };
       setItems((prevItems) => {
-        if (Array.isArray(prevItems)) {
+        if (prevItems) {
           return [...prevItems, newItemWithId];
         } else {
           return [newItemWithId];

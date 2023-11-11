@@ -1,18 +1,20 @@
 import { db } from "../_utils/firebase";
 import { collection, getDocs, addDoc, query } from "firebase/firestore";
 
-const getShoppingList = async (userId) => {
+const getShoppingList = async (userId, updateItemList) => {
   try {
-    let items = [];
-    const docRef = db.collection("users").doc(userId);
-    const itemsCollectionRef = collection(docRef, "items");
+    const itemsCollectionRef = collection(db, "users", userId, "items");
     const querySnapshot = await getDocs(itemsCollectionRef);
-
+    let items = [];
     querySnapshot.forEach((doc) => {
-      items.push({ id: doc.id, data: doc.data() });
+      // console.log( doc.id, " - ", doc.data())
+      let thisItem = { 
+        id: doc.id, 
+        ...doc.data()
+      };
+      items.push(thisItem);
     });
-
-    return items;
+      return items;
   } catch (error) {
     console.error("Error in getShoppingList ", error);
   }
@@ -20,10 +22,9 @@ const getShoppingList = async (userId) => {
 
 const addItem = async (userId, item) => {
   try {
-    const userDocRef = db.collection("users").doc(userId);
-    const itemsCollectionRef = collection(userDocRef, "items");
+    const itemsCollectionRef = collection(db, "users", userId, "items");
     const newItemRef = await addDoc(itemsCollectionRef, item);
-    return newItemRef.id;
+    colsole.log(newItemRef.id);
   } catch (error) {
     console.error("Error in addItem: ", error);
   }

@@ -22,6 +22,8 @@ export default function Login() {
     }
   }
 
+  console.log(user)
+
   return (
     <div className="min-h-screen">
       

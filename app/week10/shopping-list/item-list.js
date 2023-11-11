@@ -9,15 +9,16 @@ const ItemList = ({ items, onItemSelect }) => {
 
   const sortItems = () => {
 
-    const itemsCopy = Array.isArray(items) ? [...items] : [];
+    const itemsCopy = [...items];
+    // const itemsCopy = Array.isArray(items) ? [...items] : [];
     
     
     if (sortBy === "name") {
-      return itemsCopy.sort((a, b) => a.name.localeCompare(b.name));
+      return itemsCopy.sort((a, b) => a.name - b.name);
     } else if (sortBy === "category") {
-      return itemsCopy.sort((a, b) => a.category.localeCompare(b.category));
+      return itemsCopy.sort((a, b) => a.category - b.category);
     } else if (sortBy === "title_category") {
-        const sortedByCategory = itemsCopy.sort((a, b) => a.category.localeCompare(b.category));
+        const sortedByCategory = itemsCopy.sort((a, b) => a.category -b.category);
         const groupedByCategory = [];
         let currentCategory = null;
   
